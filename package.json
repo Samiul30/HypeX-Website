@@ -1,0 +1,38 @@
+{
+  "name": "HypeX Website",
+  "version": "1.0.0",
+  "description": "This is HypeX website with Dashboard.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samiul30/HypeX-Website.git"
+  },
+  "keywords": [
+    "discord.js",
+    "bot",
+    "dashboard",
+    "HypeX"
+  ],
+  "author": "  SAMIUL◥▶_◀◤#1312",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Samiul30/HypeX-Website/issues"
+  },
+  "homepage": "https://github.com/Samiul30/HypeX-Website#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "discord-xp": "^1.1.16",
+    "discord.js": "^12.1.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "memorystore": "^1.6.2",
+    "mongoose": "^5.12.3",
+    "passport": "^0.4.1",
+    "passport-discord": "^0.1.3"
+  }
+}

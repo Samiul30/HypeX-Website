@@ -1,0 +1,139 @@
+<%- include("partials/header", { bot, user, path, title: `Settings | ${guild.name}` }) %>
+
+<div class="container-sm center" style="margin-top: 30px;">
+  <div class="d-grid gap-2 col-4 mx-auto">
+    <% if (alert) { %>
+      <div class="alert alert-success" role="alert">
+        <%= alert %>
+      </div>
+    <% } %>
+    <h1 ><%= guild.name %></h1>
+    <hr>
+    <form method="POST">
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Level</p>
+      <p style="font-style: italic;" class="disabled">The channel where the level system will trigger</p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="true" id="level" name="level">
+        <label class="form-check-label" for="level" id="levelTextBoolean">
+         Toggle :  <%= levelBoolean %>
+        </label>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Channel: </label>
+        <select id="inputState" class="form-control" name="levelChannel">
+          <option selected><%= levelChannelget %></option>
+          <% channels.forEach(channel => {
+            %>
+            <option value="<%= channel %>" ><%= channel %></option>
+          <%
+        });
+      %>
+        </select>
+      </div>
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Logs</p>
+      <p style="font-style: italic;" class="disabled">The channel where the log system will trigger</p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="true" id="log" name="log">
+        <label class="form-check-label" for="log" id="logTextBoolean">
+         Toggle :  <%= logBoolean %>
+        </label>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Channel: </label>
+        <select id="inputState" class="form-control" name="logChannel">
+          <option selected><%= logChannelget %></option>
+          <% channels.forEach(channel => {
+            %>
+            <option value="<%= channel %>" ><%= channel %></option>
+          <%
+        });
+      %>
+        </select>
+      </div>
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Chat Bot</p>
+      <p style="font-style: italic;" class="disabled">The channel where the chatbot system will trigger</p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="true" id="chatbot" name="chatbot">
+        <label class="form-check-label" for="chatbot" id="chatbotTextBoolean">
+         Toggle :  <%= chatbotBoolean %>
+        </label>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Channel: </label>
+        <select id="inputState" class="form-control" name="chatbotChannel">
+          <option selected><%=chatbotChannelget %></option>
+          <% channels.forEach(channel => {
+            %>
+            <option value="<%= channel %>" ><%= channel %></option>
+          <%
+        });
+      %>
+        </select>
+      </div>
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Music</p>
+      <p style="font-style: italic;" class="disabled">The channel where the music system will trigger</p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="true" id="music" name="music">
+        <label class="form-check-label" for="music" id="musicTextBoolean">
+         Toggle :  <%= musicBoolean %>
+        </label>
+      </div>
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Image</p>
+      <p style="font-style: italic;" class="disabled">The channel where the image system will trigger</p>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="true" id="image" name="image">
+        <label class="form-check-label" for="image" id="imageTextBoolean">
+         Toggle :  <%= imageBoolean %>
+        </label>
+      </div>
+           
+      <br><button type="submit" class="btn btn-secondary text-white">Save Settings</button>
+    </form>
+
+  </div>
+  <script>
+    const levelText = document.getElementById('levelTextBoolean')
+    const levelBoolean = document.getElementById('level')
+    const logText = document.getElementById('logTextBoolean')
+    const logBoolean = document.getElementById('log')
+    const chatbotText = document.getElementById('chatbotTextBoolean')
+    const chatbotBoolean = document.getElementById('chatbot')
+    const musicText = document.getElementById('musicTextBoolean')
+    const musicBoolean = document.getElementById('music')
+    const imageText = document.getElementById('imageTextBoolean')
+    const imageBoolean = document.getElementById('image')
+
+    if(levelText.innerText.includes('ON')){
+      levelBoolean.checked = true
+    }
+    else{
+      levelBoolean.checked = false
+    }
+    if(logText.innerText.includes('ON')){
+      logBoolean.checked = true
+    }
+    else{
+      logBoolean.checked = false
+    }
+    if(musicText.innerText.includes('ON')){
+      musicBoolean.checked = true
+    }
+    else{
+      musicBoolean.checked = false
+    }
+    if(chatbotText.innerText.includes('ON')){
+      chatbotBoolean.checked = true
+    }
+    else{
+      chatbotBoolean.checked = false
+    }
+    if(imageText.innerText.includes('ON')){
+      imageBoolean.checked = true
+    }
+    else{
+      imageBoolean.checked = false
+    }
+  </script>
+</div>
+
+<%- include("partials/footer") %>
